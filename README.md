@@ -4,12 +4,12 @@
 
 ## Access the Application
 
-You can download the application from the [releases section](#) of this repository.
+You can download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/new) of this repository.
 
 ## Demonstration
 
-<video id="myBGvid" autoplay muted loop>
-<source src="TradingViewWidget_Demo" type="video/mp4">
+<video width="1920" height="1080" controls>
+  <source type="video/mp4" src="https://github.com/JamesDavidMorris/StockTickerWidget/blob/main/TradingViewWidget_Demo.mp4">
 </video>
 
 ## Features
@@ -24,7 +24,7 @@ You can download the application from the [releases section](#) of this reposito
 
 ## Installation and Setup
 
-1. Download the application from the [releases section](#).
+1. Download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/new).
 2. Run the application, and it will automatically set to start on Windows startup.
 
 ## Usage Instructions
