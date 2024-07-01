@@ -8,7 +8,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video src="https://github.com/rewbs/sd-parseq/assets/74455/67013869-1dfc-4144-9640-6000ec4a4fe1" /> 
+<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/354a0e4e-2f95-4c75-bd1d-b0532b1f50c4" /> 
 
 ## Features
 
