@@ -8,7 +8,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/de60b549-bf2b-42f0-8094-11c19cd7ea51" 
+<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/3a9129d0-fc6a-4e42-8366-cc07978805a5" 
        controls 
        width="600" 
        height="338" 
