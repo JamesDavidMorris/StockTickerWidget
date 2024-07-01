@@ -1,0 +1,54 @@
+{
+  "name": "Trading-view-widget",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "cross-env": "^7.0.3",
+    "ini": "^4.1.3"
+  },
+  "devDependencies": {
+    "electron": "20.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.tradingview.widget",
+    "productName": "TradingView Widget",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "files": [
+      "main.js",
+      "config.js",
+      "window.js",
+      "tray.js",
+      "preload.js",
+      "index.html",
+      "style.css",
+      "icon/**"
+    ],
+    "extraResources": [
+      "config.ini",
+      "widget.html"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon/tradingview_widget_icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

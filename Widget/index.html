@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading View Widget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="widget-container" id="widget-container">
+    <div class="iframe-overlay" id="iframe-overlay"></div>
+    <iframe id="tradingViewIframe" style="width: 100%; height: 100%; border: none;" scrolling="no"></iframe>
+</div>
+<script>
+    const { ipcRenderer } = window.electron;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const iframeOverlay = document.getElementById('iframe-overlay');
+        const widgetContainer = document.getElementById('widget-container');
+        let isDragging = false;
+        let startX, startY, offsetX, offsetY;
+
+        ipcRenderer.on('load-widget', (event, widgetHtml) => {
+            const iframe = document.getElementById('tradingViewIframe');
+            const doc = iframe.contentDocument || iframe.contentWindow.document;
+            doc.open();
+            doc.write(widgetHtml);
+            doc.close();
+
+            // Add event listener for links within the iframe
+            doc.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    if (!(e.ctrlKey || e.metaKey)) {
+                        e.preventDefault(); // Prevent default link behavior
+                        ipcRenderer.send('open-external-link', e.target.href);
+
+                        // Disable pointer-events
+                        widgetContainer.style.pointerEvents = 'none';
+                    }
+                }
+            });
+
+            // Add key event listeners to the iframe document
+            doc.addEventListener('keydown', handleKeyDown);
+            doc.addEventListener('keyup', handleKeyUp);
+        });
+
+        ipcRenderer.on('set-appearance', (event, { transparency, backgroundColor, borderRadius }) => {
+            const transparencyValue = transparency / 100;
+
+            const r = parseInt(backgroundColor.slice(1, 3), 16);
+            const g = parseInt(backgroundColor.slice(3, 5), 16);
+            const b = parseInt(backgroundColor.slice(5, 7), 16);
+
+            document.documentElement.style.setProperty('--background-color-r', r);
+            document.documentElement.style.setProperty('--background-color-g', g);
+            document.documentElement.style.setProperty('--background-color-b', b);
+            document.documentElement.style.setProperty('--transparency', transparencyValue);
+            document.documentElement.style.setProperty('--border-radius', `${borderRadius}px`);
+        });
+
+        const setInitialValues = async (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+
+            const bounds = await ipcRenderer.invoke('get-bounds');
+            offsetX = startX - bounds.x;
+            offsetY = startY - bounds.y;
+        };
+
+        const handleMouseMove = (e) => {
+            if (isDragging) {
+                const currentX = e.clientX - offsetX;
+                const currentY = e.clientY - offsetY;
+                ipcRenderer.invoke('move-window', { x: currentX, y: currentY });
+            }
+        };
+
+        const handleMouseUp = () => {
+            if (isDragging) {
+                isDragging = false;
+                ipcRenderer.send('drag-window-end');
+            }
+            widgetContainer.style.pointerEvents = 'none';
+        };
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Shift') {
+                iframeOverlay.style.display = 'block';
+            }
+            if (e.key === 'Control' || e.key === 'Meta') {
+                widgetContainer.style.pointerEvents = 'auto';
+            }
+        };
+
+        const handleKeyUp = (e) => {
+            if (e.key === 'Shift') {
+                iframeOverlay.style.display = 'none';
+            }
+            if (e.key === 'Control' || e.key === 'Meta') {
+                widgetContainer.style.pointerEvents = 'none';
+            }
+        };
+
+        const handleMouseDown = (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                widgetContainer.style.pointerEvents = 'auto';
+            } else {
+                widgetContainer.style.pointerEvents = 'none';
+            }
+        };
+
+        const handleMouseLeave = () => {
+            widgetContainer.style.pointerEvents = 'none';
+        };
+
+        const handleClick = (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                widgetContainer.style.pointerEvents = 'none';
+            }
+        };
+
+        // Check and reset pointer events on mouse move
+        const resetPointerEventsOnMouseMove = (e) => {
+            if (!(e.ctrlKey || e.metaKey)) {
+                widgetContainer.style.pointerEvents = 'none';
+            }
+        };
+
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+        document.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('keyup', handleKeyUp);
+        document.addEventListener('mousedown', handleMouseDown);
+        document.addEventListener('mouseleave', handleMouseLeave);
+        document.addEventListener('click', handleClick);
+        document.addEventListener('mousemove', resetPointerEventsOnMouseMove);
+
+        iframeOverlay.addEventListener('mousedown', (e) => {
+            if (iframeOverlay.style.display === 'block') {
+                setInitialValues(e);
+            }
+        });
+
+        window.addEventListener('blur', () => {
+            widgetContainer.style.pointerEvents = 'none';
+        });
+    });
+</script>
+</body>
+</html>
