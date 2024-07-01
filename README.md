@@ -8,8 +8,8 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video width="1920" height="1080" controls>
-  <source type="video/mp4" src="https://github.com/JamesDavidMorris/StockTickerWidget/blob/83b0bea09727e7d95c3976366ad513871db292f3/TradingViewWidget_Demo.mp4">
+<video id="videoId" autoplay muted loop>
+<source src="https://github.com/JamesDavidMorris/StockTickerWidget/blob/83b0bea09727e7d95c3976366ad513871db292f3/TradingViewWidget_Demo.mp4" type="video/mp4">
 </video>
 
 ## Features
