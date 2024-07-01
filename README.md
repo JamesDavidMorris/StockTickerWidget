@@ -8,7 +8,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/354a0e4e-2f95-4c75-bd1d-b0532b1f50c4" 
+<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/de60b549-bf2b-42f0-8094-11c19cd7ea51" 
        controls 
        width="600" 
        height="338" 
@@ -21,12 +21,12 @@ You can download the application from the [releases section](https://github.com/
 ## Features
 
 - **Customizable Tickers**: Create your own list of real-time updating tickers from any provided by TradingView.
-- **Easy Ticker Management**: Change tickers easily by right-clicking on the Electron system tray widget, clicking "Change Tickers," and pasting the HTML code from TradingView.
+- **Easy Ticker Management**: Change tickers easily by right-clicking on the system tray widget, clicking "Change Tickers," and pasting the HTML code from TradingView.
 - **Flexible Positioning and Resizing**: Position and resize the application by holding Shift and using the mouse.
-- **Quick Access to Detailed Views**: Open any ticker in your default web browser for a detailed view by Ctrl+clicking.
+- **Quick Access to Detailed Views**: Open any ticker in your default web browser for a detailed view by holding Ctrl and clicking on the ticker.
 - **Input Control**: Enable or disable mouse input.
 - **Always On Top Mode**: Enable or disable the always on top mode.
-- **Persistent Settings**: All settings are saved to a .ini file for persistence across sessions.
+- **Persistent Settings**: All settings are saved to file for persistence across sessions.
 
 ## Installation and Setup
 
