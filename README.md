@@ -6,9 +6,11 @@
 
 You can download the application from the [releases section](#) of this repository.
 
-## Screenshot
+## Demonstration
 
-<video src="https://github.com/JamesDavidMorris/StockTickerWidget/raw/main/TradingViewWidget_Demo.mp4" width="600" />
+<video id="myBGvid" autoplay muted loop>
+<source src="TradingViewWidget_Demo" type="video/mp4">
+</video>
 
 ## Features
 
