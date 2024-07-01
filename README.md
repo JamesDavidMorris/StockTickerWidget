@@ -8,7 +8,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video src='https://github.com/JamesDavidMorris/StockTickerWidget/releases/download/v1.0.0/TradingViewWidget_Demo.mp4' />
+<video controls src="https://github.com/JamesDavidMorris/StockTickerWidget/releases/download/v1.0.0/TradingViewWidget_Demo.mp4"></video>
 
 ## Features
 
