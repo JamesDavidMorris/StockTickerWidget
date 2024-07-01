@@ -8,9 +8,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video id="videoId" autoplay muted loop>
-<source src="https://github.com/JamesDavidMorris/StockTickerWidget/blob/83b0bea09727e7d95c3976366ad513871db292f3/TradingViewWidget_Demo.mp4" type="video/mp4">
-</video>
+<video src="https://github.com/rewbs/sd-parseq/assets/74455/67013869-1dfc-4144-9640-6000ec4a4fe1" /> 
 
 ## Features
 
