@@ -4,7 +4,7 @@
 
 ## Access the Application
 
-You can download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/new) of this repository.
+You can download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/tag/v1.0.0) of this repository.
 
 ## Demonstration
 
@@ -30,7 +30,7 @@ You can download the application from the [releases section](https://github.com/
 
 ## Installation and Setup
 
-1. Download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/new).
+1. Download the application from the [releases section](https://github.com/JamesDavidMorris/StockTickerWidget/releases/tag/v1.0.0).
 2. Run the application, and it will automatically set to start on Windows startup.
 
 ## Usage Instructions
