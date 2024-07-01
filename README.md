@@ -8,8 +8,14 @@ You can download the application from the [releases section](https://github.com/
 
 ## Demonstration
 
-<video controls width="600" height="338" muted loop autoplay>
-  <source src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/354a0e4e-2f95-4c75-bd1d-b0532b1f50c4" type="video/mp4">
+<video src="https://github.com/JamesDavidMorris/StockTickerWidget/assets/162427303/354a0e4e-2f95-4c75-bd1d-b0532b1f50c4" 
+       controls 
+       width="600" 
+       height="338" 
+       muted 
+       loop 
+       autoplay>
+  Your browser does not support the video tag.
 </video>
 
 ## Features
